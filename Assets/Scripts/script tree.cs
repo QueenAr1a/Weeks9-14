@@ -84,17 +84,20 @@ public class scripttree : MonoBehaviour
 
 
         currentTime = 0;
-       
-        while (currentTime < duration)
+        int i = 0;
+        while (currentTime < duration && i < appleTransforms.Count)
         {
             currentTime += Time.deltaTime;
             //We need to return something to satisfy IEnumerator as the return value
             //This is the syntax for doing so
             float timeRatio = currentTime / duration;
 
-            for (int i =0; i< appleTransforms.Count; i++)
+            appleTransforms[i].localScale = Vector3.one * tree.Evaluate(timeRatio);
+
+            if (currentTime>= duration)
             {
-                appleTransforms[i].localScale = Vector3.one * tree.Evaluate(timeRatio);
+                i++;
+                currentTime = 0;
             }
             yield return null;
         }
