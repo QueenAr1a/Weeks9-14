@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class dropdowndem : MonoBehaviour
 {
-
-
+    public GameObject Panel;
+    public TextMeshProUGUI congrats;
+        public TextMeshProUGUI failed;
     public TMP_Dropdown dropdowncut;
     public SpriteRenderer cutlery;
     public TMP_Dropdown dropdowntab;
@@ -167,6 +168,15 @@ public class dropdowndem : MonoBehaviour
 
             broscore = 0;
 
+        }
+    }
+
+    public void panel()
+    {
+        Panel.SetActive(true);
+        if ( broscore == 1 && ingscore == 1 && tabscore == 2 && cutscore == 2 )
+        {
+            congrats.text
         }
     }
 
