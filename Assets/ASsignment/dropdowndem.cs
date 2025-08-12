@@ -7,9 +7,7 @@ using UnityEngine;
 public class dropdowndem : MonoBehaviour
 {
 
-    public float speed = 1;
-    public bool moovmat = true;
-    public GameObject Mat;
+
     public TMP_Dropdown dropdowncut;
     public SpriteRenderer cutlery;
     public TMP_Dropdown dropdowntab;
@@ -28,7 +26,7 @@ public class dropdowndem : MonoBehaviour
         cutlery.sprite = dropdowncut.options[0].image;
         Table.sprite = dropdowntab.options[0].image;
         ingred.sprite = dropdowning.options[0].image;
-        StartCoroutine(MoveMat());
+      
         broth.sprite = dropdownbro.options[0].image;
     }
 
@@ -172,22 +170,5 @@ public class dropdowndem : MonoBehaviour
         }
     }
 
-    public IEnumerator MoveMat()
-    {
-        while (true)
-        {
-
-            Mat.transform.position += Vector3.right * speed * Time.deltaTime;
-            Vector3 matinScreen = Camera.main.WorldToScreenPoint(transform.position);
-            if(matinScreen.x == Screen.width/2)
-            {
-                speed = 0f;
-                yield break;
-            }
-
-            yield return true;
-
-        }
-    }
 }
 
