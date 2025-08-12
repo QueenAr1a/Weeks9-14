@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class chime : MonoBehaviour
+public class trai : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,14 +14,5 @@ public class chime : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void Playchime(int hour)
-    {
-        Debug.Log(hour.ToString());
-        for (int i = 0; i < hour;  i++) 
-        {
-            Debug.Log("chime");
-        }
     }
 }
