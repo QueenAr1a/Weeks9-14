@@ -176,7 +176,7 @@ public class dropdowndem : MonoBehaviour
         Panel.SetActive(true);
         if ( broscore == 1 && ingscore == 1 && tabscore == 2 && cutscore == 2 )
         {
-            congrats.text
+     
         }
     }
 
